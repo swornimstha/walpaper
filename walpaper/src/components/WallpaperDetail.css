@@ -1,0 +1,87 @@
+
+/* Popup Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.popup-box {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Close Button */
+.popup-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff0000;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.popup-close:hover {
+  color: #cc0000;
+  transform: scale(1.2);
+}
+
+/* Image */
+.popup-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Heading */
+.popup-box h3 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Text */
+.popup-box p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Download Button */
+.download-button {
+  display: block;
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #fff;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.download-button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}

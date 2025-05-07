@@ -2,10 +2,23 @@ import React, { useState, useEffect } from 'react';
 import WallpaperCard from './WallpaperCard';
 import axios from 'axios';
 import './WallpaperList.css'; // Custom styles
+import WallpaperDetail from './WallpaperDetail';
 
 const WallpaperList = () => {
+
+  const [selectedWallpaper, setSelectedWallpaper] = useState(null);
   const [wallpapers, setWallpapers] = useState([]);
   const [query, setQuery] = useState("");
+
+  const handleWallpaperClick = async (id) => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/wallpapers/${id}`);
+      setSelectedWallpaper(response.data);
+    } catch (error) {
+      console.error("failed to fetch details:", error);
+    }
+
+  };
 
   useEffect(() => {
     const fetchWallpapers = () => {
@@ -27,15 +40,24 @@ const WallpaperList = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
-      <div className='wallpaper-list'>
-        {wallpapers.map((wallpaper) => (
-          <WallpaperCard key={wallpaper.id}{...wallpaper} />
-        ))}
+      {selectedWallpaper ? (
+        <WallpaperDetail
+          wallpaper={selectedWallpaper}
+          onClose={() => setSelectedWallpaper(null)}
+        />
+      ) : (
+        <div className='wallpaper-list'>
+          {wallpapers.map((wallpaper) => (
+            <WallpaperCard key={wallpaper.id}{...wallpaper}
+              onClick={() => handleWallpaperClick(wallpaper.id)}
+            />
+          ))}
+        </div>
+      )}
 
-      </div>
+
     </div>
   );
-
 };
 
 export default WallpaperList;
