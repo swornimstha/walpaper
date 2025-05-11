@@ -1,4 +1,6 @@
 import React from 'react';
+import { Download } from "lucide-react";
+import "./WallpaperCard.css";
 
 const WallpaperCard = ({ id, url, thumb, onClick }) => {
   const handleOpenInNewTab = (event) => {
@@ -9,7 +11,9 @@ const WallpaperCard = ({ id, url, thumb, onClick }) => {
   return (
     <div className="wallpaper-card" onClick={onClick}>
       <img src={thumb} alt={`wallpaper-${id}`} />
-      <button onClick={handleOpenInNewTab}>Download</button>
+      <button className='download-button' onClick={handleOpenInNewTab} >
+        <Download size={20} />
+      </button>
     </div>
   );
 };

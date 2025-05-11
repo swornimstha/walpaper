@@ -1,4 +1,5 @@
 import React from 'react';
+import { Download } from "lucide-react";
 import './WallpaperDetail.css'; // Import the CSS file
 
 const WallpaperDetail = ({ wallpaper, onClose }) => {
@@ -20,7 +21,9 @@ const WallpaperDetail = ({ wallpaper, onClose }) => {
         <p><strong>Views:</strong> {wallpaper.views}</p>
         <p><strong>Favorites:</strong> {wallpaper.favorites}</p>
         <p><strong>Tags:</strong> {wallpaper.tags.map((tag) => tag.name).join(', ')}</p>
-        <button className="download-button" onClick={handleOpenImage}>Download</button>
+        <button className='download-button-card' onClick={handleOpenImage}>
+          <Download size={20} />
+        </button>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import WallpaperCard from './WallpaperCard';
 import axios from 'axios';
 import './WallpaperList.css'; // Custom styles
+import './WallpaperCard.css'; // Custom styles
 import WallpaperDetail from './WallpaperDetail';
 
 const WallpaperList = () => {
