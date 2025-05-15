@@ -1,3 +1,26 @@
+.search {
+  display: block;
+  width: 80%; /* Occupy most of the container width */
+  max-width: 400px; /* Limit the width on larger screens */
+  margin: 20px auto; /* Center align and add space above and below */
+  padding: 10px 15px; /* Add comfortable padding for typing */
+  font-size: 16px; /* Ensure the text size is readable */
+  border: 2px solid #ddd; /* Subtle border for definition */
+  border-radius: 8px; /* Rounded corners for a softer look */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+.search:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+.search::placeholder {
+  color: #aaa; /* Subtle color for placeholder text */
+  font-style: italic; /* Differentiate placeholder from input text */
+}
 
 .wallpaper-list {
   display: grid;
@@ -45,3 +68,16 @@
 .download-button:hover {
   background-color: #0056b3;
 }
+
+
+.title {
+  text-align: center; /* Center-align the text */
+  font-size: 2.5rem; /* Large, prominent text */
+  font-weight: bold; /* Bold styling for emphasis */
+  color: #000; /* Match the app's primary color */
+  margin: 20px 0; /* Add spacing above and below */
+  text-transform: uppercase; /* Convert text to uppercase for impact */
+  letter-spacing: 2px; /* Add spacing between letters for readability */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+

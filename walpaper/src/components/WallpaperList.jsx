@@ -34,29 +34,33 @@ const WallpaperList = () => {
 
 
   return (
-    <div className='wallpaper-container'>
-      <input
-        type="text"
-        placeholder="Search wallpapers..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      {selectedWallpaper ? (
-        <WallpaperDetail
-          wallpaper={selectedWallpaper}
-          onClose={() => setSelectedWallpaper(null)}
+    <div>
+      <h1 className='title'>Wallpaper Downloader</h1>
+      <div className='wallpaper-container'>
+        <input
+          className='search'
+          type="text"
+          placeholder="Search wallpapers..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
-      ) : (
-        <div className='wallpaper-list'>
-          {wallpapers.map((wallpaper) => (
-            <WallpaperCard key={wallpaper.id}{...wallpaper}
-              onClick={() => handleWallpaperClick(wallpaper.id)}
-            />
-          ))}
-        </div>
-      )}
+        {selectedWallpaper ? (
+          <WallpaperDetail
+            wallpaper={selectedWallpaper}
+            onClose={() => setSelectedWallpaper(null)}
+          />
+        ) : (
+          <div className='wallpaper-list'>
+            {wallpapers.map((wallpaper) => (
+              <WallpaperCard key={wallpaper.id}{...wallpaper}
+                onClick={() => handleWallpaperClick(wallpaper.id)}
+              />
+            ))}
+          </div>
+        )}
 
 
+      </div>
     </div>
   );
 };
